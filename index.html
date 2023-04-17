@@ -5,54 +5,49 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Hello World Lightning Out</title>
-        <script src="https://resourceful-goat-sezi0-dev-ed.trailblaze.my.site.com/lightning/lightning.out.js"></script>
     </head>
     <body>
         <main>
             <h1>Welcome to My Website</h1>  
             <h1>Hello World LWC bellow</h1>
 
+            <script src="https://resourceful-goat-sezi0-dev-ed.trailblaze.my.site.com/lightning/lightning.out.js"></script>
+            <div data-lightning-out="true"></div>
+            <style>
+                a {
+                    color: orange;
+                }
+            </style>
 
-                <div data-lightning-out="true"></div>
-                <style>
-                    a {
-                        color: orange;
-                    }
-                </style>
+            <script>
+                // Aura Wrapper for LWC
+                const appName = 'c:helloWorldWrapper';
+                // LWC component name
+                const componentName = 'c:helloWorld';
+                // Digital Experience MyDomain
+                const lightningEndpoint = 'resourceful-goat-sezi0-dev-ed.trailblaze.my.site.com';
+                //
+                const targetElement = document.querySelector("[data-lightning-out]");
+                // Offer data to constuct 
+                const componentAttributes = {
+                };
 
-                <script>
-                    // Aura Wrapper for LWC
-                    const appName = 'c:helloWorldWrapper';
-                    // LWC component name
-                    const componentName = 'c:helloWorld';
-                    // Digital Experience MyDomain
-                    const lightningEndpoint = 'resourceful-goat-sezi0-dev-ed.trailblaze.my.site.com';
-                    //
-                    const targetElement = document.querySelector("[data-lightning-out]");
-                    // Offer data to constuct 
-                    const componentAttributes = {
-
-                    };
-
-                    $Lightning.use(
-                            appName,
-                            function (){
-                            $Lightning.createComponent(
-                                    componentName,
-                                    componentAttributes,
-                                    targetElement,
-                                    function (cmp){
-                                        console.log('lightning component created');
-                                    }
-                            );
-                            },
-                            lightningEndpoint
-                    );
-
-
-                </script>
+                $Lightning.use(
+                        appName,
+                        function (){
+                        $Lightning.createComponent(
+                                componentName,
+                                componentAttributes,
+                                targetElement,
+                                function (cmp){
+                                    console.log('lightning component created');
+                                }
+                        );
+                        },
+                        lightningEndpoint
+                );
+            </script>
         </main>
     </body>
 </html>
