@@ -27,13 +27,14 @@
                 // LWC component name
                 const componentName = "c:helloWorld";
                 // Digital Experience MyDomain
-                const lightningEndpoint = "resourceful-goat-sezi0-dev-ed.trailblaze.my.site.com";
+                const lightningEndpoint = "https://resourceful-goat-sezi0-dev-ed.trailblaze.my.site.com";
                 // Locates Div with " data-lightning-out="true" "
                 const targetElement = document.querySelector("[data-lightning-out]");
                 // Offer data to construct lightning component 
                 const componentAttributes = {
                 };
 
+                console.log('Use Lightning Comp request begins');
                 $Lightning.use(
                         appName,
                         function (){
