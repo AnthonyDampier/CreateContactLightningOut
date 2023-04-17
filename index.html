@@ -13,7 +13,7 @@
             <h1>Hello World LWC bellow</h1>
 
             <script src="https://resourceful-goat-sezi0-dev-ed.trailblaze.my.site.com/lightning/lightning.out.js"></script>
-            <div data-lightning-out="true"></div>
+            
             <style>
                 a {
                     color: orange;
@@ -22,14 +22,14 @@
 
             <script>
                 // Aura Wrapper for LWC
-                const appName = 'c:helloWorldWrapper';
+                const appName = "c:helloWorldWrapper";
                 // LWC component name
-                const componentName = 'c:helloWorld';
+                const componentName = "c:helloWorld";
                 // Digital Experience MyDomain
-                const lightningEndpoint = 'resourceful-goat-sezi0-dev-ed.trailblaze.my.site.com';
-                //
+                const lightningEndpoint = "resourceful-goat-sezi0-dev-ed.trailblaze.my.site.com";
+                // Locates Div with " data-lightning-out="true" "
                 const targetElement = document.querySelector("[data-lightning-out]");
-                // Offer data to constuct 
+                // Offer data to construct lightning component 
                 const componentAttributes = {
                 };
 
@@ -48,6 +48,8 @@
                         lightningEndpoint
                 );
             </script>
+            <!-- Where LWC will be places -->
+            <div data-lightning-out="true"></div>
         </main>
     </body>
 </html>
