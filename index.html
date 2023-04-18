@@ -9,10 +9,58 @@
     </head>
     <body>
         <main>
-            <h1>Hello World LWC below</h1>
 
-            <!-- Script pulling in lightning out resources -->
-            <script src="https://resourceful-goat-sezi0-dev-ed.trailblaze.my.site.com/lightning/lightning.out.js"></script>
+            <div>
+                <h1>Hello World LWC below</h1>
+
+                <!-- Script pulling in lightning out resources -->
+                <script src="https://resourceful-goat-sezi0-dev-ed.trailblaze.my.site.com/lightning/lightning.out.js"></script>
+                
+                <!-- LWC styling -->
+                <style>
+                    a {
+                        color: orange;
+                    }
+                </style>
+
+                <!-- HelloWorld LWC will be places -->
+                <div id="Hello-World-LWC"></div>
+
+                <script>
+                    // Aura Wrapper for LWC
+                    const appName = "c:helloWorldWrapper";
+                    // LWC component name
+                    const componentName = "c:helloWorld";
+                    // Digital Experience MyDomain
+                    const lightningEndpoint = "https://resourceful-goat-sezi0-dev-ed.trailblaze.my.site.com";
+                    // Locates Div with id=""
+                    const targetElement = "Hello-World-LWC";
+                    // Offer data to construct lightning component 
+                    const componentAttributes = {
+                    };
+
+                    console.log('Use Lightning Comp request begins');
+                    $Lightning.use(
+                            appName,
+                            function (){
+                                $Lightning.createComponent(
+                                        componentName,
+                                        componentAttributes,
+                                        targetElement,
+                                        function (cmp){
+                                            console.log(componentAttributes, 'lightning component created', cmp);
+                                        }
+                                );
+                            },
+                            lightningEndpoint
+                    );
+                </script>
+                
+        </div>
+
+        <div>
+
+            <h1>Hello World LWC below</h1>
             
             <!-- LWC styling -->
             <style>
@@ -21,39 +69,40 @@
                 }
             </style>
 
-            <div id="Hello-World-LWC"></div>
+            <!-- HelloWorld LWC will be places -->
+            <div id="Create-Contact-LWC"></div>
 
             <script>
                 // Aura Wrapper for LWC
-                const appName = "c:helloWorldWrapper";
+                const appName2 = "c:CreateContactWrapper";
                 // LWC component name
-                const componentName = "c:helloWorld";
+                const componentName2 = "c:createContact";
                 // Digital Experience MyDomain
-                const lightningEndpoint = "https://resourceful-goat-sezi0-dev-ed.trailblaze.my.site.com";
-                // Locates Div with " data-lightning-out="true" "
-                const targetElement = "Hello-World-LWC";
+                const lightningEndpoint2 = "https://resourceful-goat-sezi0-dev-ed.trailblaze.my.site.com";
+                // Locates Div with id=""
+                const targetElement2 = "Create-Contact-LWC";
                 // Offer data to construct lightning component 
-                const componentAttributes = {
+                const componentAttributes2 = {
                 };
 
                 console.log('Use Lightning Comp request begins');
                 $Lightning.use(
-                        appName,
+                        appName2,
                         function (){
                             $Lightning.createComponent(
-                                    componentName,
-                                    componentAttributes,
-                                    targetElement,
+                                    componentName2,
+                                    componentAttributes2,
+                                    targetElement2,
                                     function (cmp){
-                                        console.log('lightning component created', cmp);
+                                        console.log(componentAttributes2, 'lightning component created' , cmp);
                                     }
                             );
                         },
                         lightningEndpoint
                 );
             </script>
-            <!-- Where LWC will be places -->
-            
+
+        </div>
         </main>
     </body>
 </html>
