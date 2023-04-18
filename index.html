@@ -73,10 +73,10 @@
             <div id="Create-Contact-LWC"></div>
 
             <script>
-                // Aura Wrapper for LWC
-                const appName2 = "c:helloWorldWrapper";
+                // Aura Wrapper for LWC - Lightning.use will only accept on App Name 
+                // !! const appName2 = "c:helloWorldWrapper";
                 // LWC component name
-                const componentName2 = "c:createContact";
+                const componentName2 = "c:contactCreator";
                 // Digital Experience MyDomain
                 const lightningEndpoint2 = "https://resourceful-goat-sezi0-dev-ed.trailblaze.my.site.com";
                 // Locates Div with id=""
@@ -87,7 +87,7 @@
 
                 console.log('Use Lightning Comp request begins');
                 $Lightning.use(
-                        appName2,
+                        appName,
                         function (){
                             $Lightning.createComponent(
                                     componentName2,
